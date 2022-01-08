@@ -22,13 +22,16 @@
         @if(Route::has('login'))
         @auth
         <li>
-          <a class="ctn" href="{{url("myappointment")}}" style='background-color:greenyellow; color:white;'>myAppointments</a>
-          
+          <a class="ctn" href="{{url("My Art Bookings")}}">My Art Bookings</a>
+    
         </li>
         <li class="nav-item">
-          <x-app-layout>
-       </x-app-layout> 
+          
+        
        </li>
+        <x-app-layout>
+   
+       </x-app-layout> 
           @else
         <li>
           <a class="ctn" href="{{route('login')}}">Login</a>
@@ -40,7 +43,7 @@
           @endauth
           @endif
     </ul>
-    <img src="images/menu2.svg" width="40px" height="40px" alt="" class="menu-btn">
+    <img src="../assets/images/menu2.svg" width="40px" height="40px" alt="" class="menu-btn">
 </nav>
     <header>
         <div class="header-content">
