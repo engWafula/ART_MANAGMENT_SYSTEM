@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adventure</title>
+    <title>UG ART</title>
 </head>
 <body>
   
 
 <!-- Navbar -->
 <nav class="navbar">
-    <h1 class="logo">ADVENTURE</h1>
+    <h1 class="logo">UG ART</h1>
     <ul class="nav-links">
         <li class="active"><a href="#"></a>Home</li>
         <li><a href="#"></a>Tours</li>
@@ -25,13 +25,10 @@
           <a class="ctn" href="{{url("My Art Bookings")}}">My Art Bookings</a>
     
         </li>
-        <li class="nav-item">
-          
-        
-       </li>
-        <x-app-layout>
-   
-       </x-app-layout> 
+    
+       <x-app-layout>
+    </x-app-layout>
+      </li> 
           @else
         <li>
           <a class="ctn" href="{{route('login')}}">Login</a>
