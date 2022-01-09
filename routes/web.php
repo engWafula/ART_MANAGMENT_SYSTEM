@@ -14,6 +14,9 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/',[HomeController::class,'index']);
+Route::post('/upload_art',[HomeController::class,'upload']);
+
+Route::get('/AddArt',[HomeController::class,'addArt']);
 Route::get('/home',[HomeController::class,'redirect']);
 // ->middleware('auth',"verified");
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

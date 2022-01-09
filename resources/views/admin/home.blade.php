@@ -2,30 +2,12 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>UG ART ADMIN </title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="admin/assets/vendors/feather/feather.css">
-  <link rel="stylesheet" href="admin/assets/vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="admin/assets/vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="admin/assets/vendors/typicons/typicons.css">
-  <link rel="stylesheet" href="admin/assets/vendors/simple-line-icons/css/simple-line-icons.css">
-  <link rel="stylesheet" href="admin/assets/vendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="admin/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="admin/assets/js/select.dataTables.min.css">
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="admin/assets/css/vertical-layout-light/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="admin/assets/images/favicon.png" />
+
+  @include('admin.css')
 </head>
 <body>
   <div class="container-scroller">
-    <div class="row p-0 m-0 proBanner" id="proBanner">
+    {{-- <div class="row p-0 m-0 proBanner" id="proBanner">
       <div class="col-md-12 p-0 m-0">
         <div class="card-body card-body-padding d-flex align-items-center justify-content-between">
           <div class="ps-lg-1">
@@ -42,7 +24,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
@@ -357,31 +339,24 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item nav-category">UI Elements</li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="menu-icon mdi mdi-floor-plan"></i>
-              <span class="menu-title">UI Elements</span>
-              <i class="menu-arrow"></i> 
+             <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('AddArt')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title">Add Art</span>
             </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-              </ul>
-            </div>
           </li>
-          <li class="nav-item nav-category">Forms and Datas</li>
+          <li class="nav-item nav-category">Add Art</li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+            <a class="nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="form-elements"  >
               <i class="menu-icon mdi mdi-card-text-outline"></i>
               <span class="menu-title">Form elements</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Adding  Art</a></li>
               </ul>
             </div>
           </li>
@@ -1185,29 +1160,11 @@
   </div>
   <!-- container-scroller -->
 
-  <!-- plugins:js -->
-  <script src="admin/assets/vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <script src="admin/assets/vendors/chart.js/Chart.min.js"></script>
-  <script src="admin/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-  <script src="admin/assets/vendors/progressbar.js/progressbar.min.js"></script>
-
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
-  <script src="admin/assets/js/off-canvas.js"></script>
-  <script src="admin/assets/js/hoverable-collapse.js"></script>
-  <script src="admin/assets/js/template.js"></script>
-  <script src="admin/assets/js/settings.js"></script>
-  <script src="admin/assets/js/todolist.js"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <script src="admin/assets/js/jquery.cookie.js" type="text/javascript"></script>
-  <script src="admin/assets/js/dashboard.js"></script>
-  <script src="admin/assets/js/Chart.roundedBarCharts.js"></script>
-  <!-- End custom js for this page-->
+  @include('admin.css')
 </body>
 
 </html>
+
+
 
 
