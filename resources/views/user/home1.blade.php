@@ -35,7 +35,7 @@
         <li><a href="single.html">Exhibition</a></li>
         <li><a href="bio.html">Bio</a></li>
         <!-- <li><a href="blog.html">Blog</a></li> -->
-        <li><a href="contact.html">Contact</a></li>
+        <li><a  href="{{url("makeOrder")}}">Order Art Piece</a></li>
      
         @if(Route::has('login'))
         @auth

@@ -14,7 +14,8 @@ use App\Http\Controllers\UserController;
 |
 */
 
-
+Route::get('/makeOrder',[UserController::class,'makeOrder']);
+Route::post('/Order',[UserController::class,'order']);
 Route::post('/upload_art',[HomeController::class,'upload']);
 Route::get('/',[UserController::class,'index']);
 Route::get('/AddArt',[HomeController::class,'addArt']);
