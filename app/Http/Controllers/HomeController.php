@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\ArtPiece;
+use App\Models\Arts;
 class HomeController extends Controller
 {
     public function redirect(){
         if(Auth::id()){
          if(Auth::User()->usertype=="0"){
-            // $doctor=doctors::all();
-            return view('user.home');
+            $art = arts::all();
+
+            return view("user.home1",compact('art'));
          }
          else{
              return view('admin.home');
@@ -23,9 +24,7 @@ class HomeController extends Controller
         }
     }
 
-    public  function  index(){
-        return view("user.home");
-    }
+  
 
   
     public function addArt(){
@@ -44,7 +43,7 @@ class HomeController extends Controller
     }
 
     public function upload(Request $request){
-        $art= new ArtPiece;
+        $art= new Arts;
         $image=$request->file;
         $imagename=time().".".$image->getClientOriginalExtension();
         $request->file->move("ArtPieces",$imagename);

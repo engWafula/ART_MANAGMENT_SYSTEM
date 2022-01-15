@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../assets/styles.css">
+      <link rel="stylesheet" href="../assets/css/maicons.css">
+
+  <link rel="stylesheet" href="../assets/css/bootstrap.css">
+
+  <link rel="stylesheet" href="../assets/vendor/owl-carousel/css/owl.carousel.css">
+
+  <link rel="stylesheet" href="../assets/vendor/animate/animate.css">
+
+  <link rel="stylesheet" href="../assets/css/theme.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,28 +62,15 @@
 
     <!-- == Events == -->
 
-    <section class="events">
-        <div class="title">
-                <h1>Upcoming Events</h1>
-                <div class="line"></div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <img class="field" src="../assets/images/field.jpeg" alt="" width="500px" height="355px">
-                <h4>Moutain Camp Trek</h4>
-                <p>You can enjoy your time on this kind of mountain <br> 
-                Where they are no disturbences you can camp here <br>
-                for as long as you can.</p>
-                <a href="#" class="ctn">Learn More</a>
-            </div>
-            <div class="col">
+  @include('user.art')
+            {{-- <div class="col">
                 <img class="r1" src="../assets/images/r1.jpg" alt="" width="500px" height="355px">
                 <h4>Amazing Hunt For Retals</h4>
                 <p>We are sure some people are out there looking for a <br> place to stay,
                 well, here you go what a nice place <br> to stay isn't it?</p>
                 <a href="#" class="ctn">Learn More</a>
             </div>
-        </div>
+        </div> --}}
     </section>
     <section class="explore">
        <div class="explore-content">
@@ -119,5 +115,14 @@
         navlinks.classList.toggle('mobile-menu')
         })
     </script>
+    <script src="../assets/js/jquery-3.5.1.min.js"></script>
+
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+<script src="../assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
+
+<script src="../assets/vendor/wow/wow.min.js"></script>
+
+<script src="../assets/js/theme.js"></script>
     </body>
 </html>

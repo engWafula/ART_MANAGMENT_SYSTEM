@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +14,9 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/',[HomeController::class,'index']);
-Route::post('/upload_art',[HomeController::class,'upload']);
 
+Route::post('/upload_art',[HomeController::class,'upload']);
+Route::get('/',[UserController::class,'index']);
 Route::get('/AddArt',[HomeController::class,'addArt']);
 Route::get('/home',[HomeController::class,'redirect']);
 // ->middleware('auth',"verified");
