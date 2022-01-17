@@ -35,7 +35,7 @@
         <li><a href="single.html">Exhibition</a></li>
         <li><a href="bio.html">Bio</a></li>
         <!-- <li><a href="blog.html">Blog</a></li> -->
-        <li><a href="contact.html">Order Art Piece</a></li>
+        <li><a  href="{{url("makeOrder")}}">Order Art Piece</a></li>
      
         @if(Route::has('login'))
         @auth
@@ -76,64 +76,39 @@
   <main class="main-content">
     <div class="container-fluid photos">
       <div class="row justify-content-center">
-        
-        <div class="col-md-6 pt-4"  data-aos="fade-up">
-          <h2 class="text-white mb-4">ORDER FOR AN ART PIECE</h2>
+        @foreach ($data as $art )
+        <div class="col-md-6 pt-4">
+          <figure class="mb-5" data-aos="fade-up">
 
-          <div class="row">
-            <div class="col-md-12">
-              <p class="mb-5">For anyone who  wishes to have an artpiece at<a href=""> UG ART</a> make order now from your favourite Artist</p>
+          <h2 class="text-white mb-4" data-aos="fade-up">ABOUT THE ART PIECE </h2>
+          
+          </figure>
+          <img src="ArtPieces/{{$art->image}}" alt="Image" class="img-fluid">
+          <h4 class="text-white mb-4" data-aos="fade-up">Artist Name: {{$art->name}} </h4>
+
+          <div class="row" data-aos="">
+            <class class="col-md-12">
+              <p class="text-white mb-4">{{$art->description}}</p>
+          <p class="text-white mb-4" data-aos="fade-up">Category: {{$art->category}} </p>
+              <p class="text-white mb-4" data-aos="fade-up">My email address: {{$art->email}} </p>
+
+              <p class="text-white mb-4">
+              Located  in : {{$art->city}}
+            </p>
+            <p  class="text-white mb-4">Posted on: {{$art->updated_at}}<br></p>
               
-
-              <div class="row">
-                <div class="col-md-12">
-
-                  
-                    <form id="form" action="{{url('Order')}}" method="POST"  enctype="multipart/form-data">
-                        @csrf
-                          <div class="row mt-5 ">
-                            <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
-                              <input type="text" class="form-control" placeholder="Full name" name="name" required>
-                            </div>
-                            <div class="col-12 col-sm-6 py-2 wow fadeInRight">
-                              <input type="text" class="form-control" placeholder="Email address.." name="email" required>
-                            </div>
-                            <div class="col-12 col-sm-6 py-2 wow fadeInLeft" data-wow-delay="300ms">
-                              <input type="date" class="form-control" name="date" required>
-                            </div>
-                            <div class="col-12 col-sm-6 py-2 wow fadeInRight" data-wow-delay="300ms">
-                          <select  id="departement" class="custom-select" name="selectedArtist">
-                            <option value="general">---Select Artist---</option>
-                               {{-- @foreach ($doctor as $doctors ) --}}
-                                   @foreach ($artist as $artists )
-                                 
-                               <option value="{{$artists->name}}">{{$artists->name}}</option>
-                               @endforeach
-                               {{-- @endforeach --}}
-                              </select>
-                            </div>
-                            <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
-                              <input type="text" class="form-control" placeholder="Number.." name="phone" required>
-                            </div>
-                            <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
-                                <label for="formFile" class="form-label">Sample Picture</label>
-                                <input class="form-control" type="file" id="formFile" name="file">
-                              </div>
-                            <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
-                              <textarea name="description" id="message" class="form-control" rows="6" placeholder="Enter a description of what you want.." required></textarea>
-                            </div>
-                          </div>
-                  
-                          <input type="submit" class="btn btn-success"/>
-                        </form>
-                 
-         
-                </div>
                 
-              </div>
+                <li>  <button type="submit" class="form-control-submit-button"><a href="tel:{{$art->phone}}">CALL ME</a></button></li>
+                 </class>
+           
+                          
+
+          </ul> 
+              
             </div>
           </div>
         </div>
+        @endforeach
 
       </div>
 
@@ -148,6 +123,7 @@
       </div>
     </div>
   </main>
+  
 
 </div> <!-- .site-wrap -->
 

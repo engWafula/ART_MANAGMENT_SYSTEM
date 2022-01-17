@@ -2,9 +2,11 @@
 <html lang="en">
 
 <head>
-    @include('admin.css')
-
-    <!-- plugins:css -->
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Star Admin2 </title>
+  <!-- plugins:css -->
   <link rel="stylesheet" href="admin/assets/vendors/feather/feather.css">
   <link rel="stylesheet" href="admin/assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="admin/assets/vendors/ti-icons/css/themify-icons.css">
@@ -13,8 +15,6 @@
   <link rel="stylesheet" href="admin/assets/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="admin/assets/vendors/select2/select2.min.css">
-  <link rel="stylesheet" href="admin/assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="admin/assets/css/vertical-layout-light/style.css">
@@ -33,11 +33,11 @@
           </button>
         </div>
         <div>
-          <a class="navbar-brand brand-logo" href="index.html">
-            <img src="admin/assets/images/logo.svg" alt="logo" />
+          <a class="navbar-brand brand-logo" href="../../index.html">
+            <img src="../../images/logo.svg" alt="logo" />
           </a>
-          <a class="navbar-brand brand-logo-mini" href="index.html">
-            <img src="admin/assets/images/logo-mini.svg" alt="logo" />
+          <a class="navbar-brand brand-logo-mini" href="../../index.html">
+            <img src="../../images/logo-mini.svg" alt="logo" />
           </a>
         </div>
       </div>
@@ -49,6 +49,39 @@
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown d-none d-lg-block">
+            <a class="nav-link dropdown-bordered dropdown-toggle dropdown-toggle-split" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false"> Select Category </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
+              <a class="dropdown-item py-3" >
+                <p class="mb-0 font-weight-medium float-left">Select category</p>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Bootstrap Bundle </p>
+                  <p class="fw-light small-text mb-0">This is a Bundle featuring 16 unique dashboards</p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Angular Bundle</p>
+                  <p class="fw-light small-text mb-0">Everything you’ll ever need for your Angular projects</p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">VUE Bundle</p>
+                  <p class="fw-light small-text mb-0">Bundle of 6 Premium Vue Admin Dashboard</p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">React Bundle</p>
+                  <p class="fw-light small-text mb-0">Bundle of 8 Premium React Admin Dashboard</p>
+                </div>
+              </a>
+            </div>
+          </li>
           <li class="nav-item d-none d-lg-block">
             <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
               <span class="input-group-addon input-group-prepend border-right">
@@ -114,7 +147,7 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                  <img src="../../images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
@@ -123,7 +156,7 @@
               </a>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                  <img src="../../images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
@@ -132,7 +165,7 @@
               </a>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                  <img src="../../images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
@@ -143,15 +176,21 @@
           </li>
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="img-xs rounded-circle" src="admin/assets/images/faces/face8.jpg" alt="Profile image"> </a>
-     
+              <img class="img-xs rounded-circle" src="../../images/faces/face8.jpg" alt="Profile image"> </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+              <div class="dropdown-header text-center">
+                <img class="img-md rounded-circle" src="../../images/faces/face8.jpg" alt="Profile image">
+                <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
+                <p class="fw-light text-muted mb-0">allenmoreno@gmail.com</p>
+              </div>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i> Messages</a>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i> Activity</a>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i> FAQ</a>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+            </div>
           </li>
-       
         </ul>
-
-        <x-app-layout>
-        </x-app-layout>
-
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
           <span class="mdi mdi-menu"></span>
         </button>
@@ -333,7 +372,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="/home">
+            <a class="nav-link" href="../../index.html">
               <i class="mdi mdi-grid-large menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -425,71 +464,97 @@
         </ul>
       </nav>
       <!-- partial -->
-      <div class="main-panel">        
+      <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-            <div class="col-md-6 grid-margin stretch-card">
-            
-            
-            <div class="col-12 grid-margin stretch-card">
+          
+       
+            <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Add  Art  Piece</h4>
-                  <p class="card-description">
-                    Art Piece
-                  </p>
-                 <form action="{{url("upload_art")}}" method="POST" enctype="multipart/form-data">
-                 @csrf
-                    <div class="form-group">
-                      <label for="exampleInputName1">Name</label>
-                      <input type="text" class="form-control" name="name" id="exampleInputName1" placeholder="Name">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail3">Email address</label>
-                      <input type="email" class="form-control" name="email" id="exampleInputEmail3" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword4">Phone</label>
-                      <input type="number" name="phone" class="form-control" id="exampleInputPassword4" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleSelectGender">Art Category</label>
-                        <select class="form-control" id="exampleSelectGender" name="category">
-                          <option value="colored">Colored</option>
-                          <option value="pencil">Pencil</option>
-                        </select>
-                      </div>
-                    <div class="form-group">
-                      <label>Art Piece </label>
-                      <input type="file" name="file" class="file-upload-default">
-                      <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                        <span class="input-group-append">
-                          <button class="file-upload-browse btn btn-primary text-black" type="button">Upload</button>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputCity1">City</label>
-                      <input type="text" name="city" class="form-control" id="exampleInputCity1" placeholder="Location">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleTextarea1">Description</label>
-                      <textarea class="form-control" id="exampleTextarea1" name="description" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary me-2 text-black">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
-                  </form>
+                  <h4 class="card-title">Orders from the Clients</h4>
+               
+                  <div class="table-responsive pt-5">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>
+                            #
+                          </th>
+                          <th>
+                            Client name
+                          </th>
+                          <th>
+                            Phone
+                          </th>
+                          <th>
+                            email
+                          </th>
+                          <th>
+                            Date
+                          </th>
+                          <th>
+                            Selected Artist
+                          </th>
+                          <th>
+                            Message
+                          </th>
+                          <th>
+                            Status
+                          </th>
+                          <th>
+                            Picture
+                          </th>
+                          <th> Approved</th>
+                          <th> Canceled</th>
+                           <th> Send Mail</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @foreach ($orders as$order )
+                        <tr>
+                          <td>
+                            {{$order->id}}
+                          </td>
+                          <td>
+                            {{$order->name}}
+                          </td>
+                          <td>
+                            {{$order->phone}}
+                          </td>
+                          <td>
+                            {{$order->email}}
+                          </td>
+                          <td>
+                            {{$order->created_at}}
+                          </td>
+                          <td>
+                            {{$order->selectedArtist}}
+                          </td>
+                          <td>
+                            {{$order->description}}
+                          </td>
+                          <td>
+                            {{$order->status}}
+                          </td>
+                          <td>
+                            
+                      
+                            <img   src="ArtPieces/{{$order->image}}" alt="" width="100px" height="100px">
+                                      </td>
+                                      <td><a class="btn btn-success" onclick="return confirm('Are you sure you want to approve this')" href="{{url('approve_order',$order->id)}}">Approve</a></td>
+                                      <td><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this')" href="{{url('canceled',$order->id)}}">Cancel</a></td>
+                                      <td><a class="btn btn-primary"  href="{{url('send_Mail',$order->id)}}">Send Mail</a></td>
+                        </tr>
+                        @endforeach
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
+ 
            
-       
-  
-       
-            </div>
-          </div>
-        </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
@@ -504,11 +569,11 @@
     </div>
     <!-- page-body-wrapper ends -->
   </div>
-     <script src="admin/assets/vendors/js/vendor.bundle.base.js"></script>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="admin/assets/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
-  <script src="admin/assets/vendors/typeahead.js/typeahead.bundle.min.js"></script>
-  <script src="admin/assets/vendors/select2/select2.min.js"></script>
   <script src="admin/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
   <!-- End plugin js for this page -->
   <!-- inject:js -->
@@ -519,9 +584,7 @@
   <script src="admin/assets/js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="admin/assets/js/file-upload.js"></script>
-  <script src="admin/assets/js/typeahead.js"></script>
-  <script src="admin/assets/js/select2.js"></script>
   <!-- End custom js for this page-->
 </body>
+
 </html>

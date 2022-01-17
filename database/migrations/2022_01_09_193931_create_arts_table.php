@@ -22,6 +22,7 @@ class CreateArtsTable extends Migration
             $table->string('description')->nullable();
             $table->string('city')->nullable();
             $table->string('image')->nullable();
+            $table->string('user_name')->nullable();
             $table->timestamps();
         });
     }

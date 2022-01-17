@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Arts;
+use App\Models\Orders;
 class HomeController extends Controller
 {
     public function redirect(){
@@ -15,18 +16,40 @@ class HomeController extends Controller
             return view("user.home1",compact('art'));
          }
          else{
-             return view('admin.home');
+            $userId=Auth::user()->id;
+            $names =arts::where('name',$userId)->get();
+            // $username=Auth::user()->id;
+            // $name=user::where('name',$username)->get();
+             return view('admin.home',compact('names'));
          }
         }
         else{
-            
+         
             return redirect()->back();
         }
     }
 
-  
+    public  function  orders(){
+        // $artist = user::all()->where("usertype","1");
+        $orders = orders::all();
+         return view("admin.orders",compact('orders'));
+    }
 
-  
+    public function approve($id){
+        $data=orders::find($id);
+        $data->status="approved";
+        $data->save();
+        return redirect()->back();
+    }
+
+    
+    public function cancel_order($id){
+        $data=orders::find($id);
+        $data->status="Canceled";
+        $data->save();
+        return redirect()->back();
+    }
+    
     public function addArt(){
         if(Auth::id()){
          if(Auth::user()->usertype==1){
@@ -54,6 +77,12 @@ class HomeController extends Controller
         $art->city=$request->city;
         $art->description=$request->description;
         $art->category=$request->category;
+        
+        if(Auth::id()){
+            // $art->user_id=Auth::user()->id;
+             $art->user_name=Auth::user()->user_name;
+            
+        }
         $art->save();
         
         return redirect()->back()->with("message","DOCTOR  ADDED  SUCCESSFULLY");

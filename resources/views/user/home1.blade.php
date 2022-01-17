@@ -24,7 +24,8 @@
 
   <header class="header-bar d-flex d-lg-block align-items-center" data-aos="fade-left">
     <div class="site-logo">
-      <a class="navbar-brand" href="index.html" >DENO ARTS <sup><i>UG</i></s></a>
+      <img  class="img-fluid navbar-brand" src="../assets/images/logo.png" id="deno" alt="" width='50%' height="50%"/>
+      {{-- <a class="navbar-brand" href="index.html" >DENO ARTS <sup><i>UG</i></s></a> --}}
     </div>
     
     <div class="d-inline-block d-xl-none ml-md-0 ml-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
@@ -32,7 +33,7 @@
     <div class="main-menu">
       <ul class="js-clone-nav">
         <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="single.html">Exhibition</a></li>
+        {{-- <li><a href="single.html">Exhibition</a></li> --}}
         <li><a href="bio.html">Bio</a></li>
         <!-- <li><a href="blog.html">Blog</a></li> -->
         <li><a  href="{{url("makeOrder")}}">Order Art Piece</a></li>
@@ -40,24 +41,21 @@
         @if(Route::has('login'))
         @auth
         <li>
-          <a  href="{{url("myappointment")}}" style='background-color:greenyellow; color:white;'>myAppointments</a>
+          <a  href="{{url("MyOrders")}}">My Orders</a>
           
         </li>
-        <li >
-    
-       </li>
-
+      
        <x-app-layout>
       </x-app-layout> 
           @else
         <li >
-          {{-- <a class="btn btn-primary ml-lg-2" href="{{route('login')}}">Login</a> --}}
-          <a type="button" class="btn btn-primary" href="{{route('login')}}">Login</a>
+          
+          <a  class="btn btn-primary" href="{{route('login')}}">Login</a>
         </li>
      
         <li>
-            {{-- <a class="btn btn-success ml-lg-2 mt-2"  href="{{route('register')}}">Register</a> --}}
-            <a type="button" class="btn btn-success mt-2"  href="{{route('register')}}">Register</a>
+         
+            <a  class="btn btn-success mt-2"  href="{{route('register')}}">Register</a>
           </li>
           @endauth
           @endif
@@ -73,7 +71,7 @@
       </ul>
     </div>
   </header> 
-  <div class><h2 class="text-white mb-4">WELCOME TO <img src="../assets/images/deno.jpg" id="deno" alt="DENO"></a> ARTS UG ONLINE ART EXHIBITION </h2>
+  <div class><h2 class="text-white mb-4">WELCOME TO UG ARTS ONLINE ART EXHIBITION </h2>
   <p class="mb-5"> This an online art piece <a href="single.html">exhibition platform <a> that focuses on drawings for all colors
     that can also be sold to you in  <a href="">a frame</a> or only the piece of paper<br> that can be sent to you through our social media pages  so take your time and view the beauty of ART and also order for yours <a href="contact.html">NOW<a>
   </a></p>

@@ -22,6 +22,8 @@ class CreateOrdersTable extends Migration
             $table->string('description')->nullable();
             $table->string('selectedArtist')->nullable();
             $table->string('image')->nullable();
+            $table->string('status')->nullable();
+            $table->string('user_id')->nullable();
             $table->timestamps();
         });
     }
