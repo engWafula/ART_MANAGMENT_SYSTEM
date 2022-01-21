@@ -15,12 +15,15 @@ class HomeController extends Controller
 
             return view("user.home1",compact('art'));
          }
-         else{
+         else if(Auth::User()->usertype=="1"){
             $userId=Auth::user()->id;
             $names =arts::where('name',$userId)->get();
             // $username=Auth::user()->id;
             // $name=user::where('name',$username)->get();
              return view('admin.home',compact('names'));
+         }
+         else{
+             return view('Super.admin');
          }
         }
         else{

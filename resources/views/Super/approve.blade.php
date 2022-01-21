@@ -482,7 +482,7 @@
                             #
                           </th>
                           <th>
-                            Client name
+                            Art name
                           </th>
                           <th>
                             Phone
@@ -491,16 +491,16 @@
                             email
                           </th>
                           <th>
-                            Date
+                            Category
                           </th>
                           <th>
-                            Selected Artist
+                            City
                           </th>
                           <th>
-                            Message
+                            Date Posted
                           </th>
                           <th>
-                            Status
+                            Artist Name
                           </th>
                           <th>
                             Picture
@@ -511,46 +511,46 @@
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach ($orders as$order )
+                        @foreach ($art as$arts )
                         <tr>
                           <td>
-                            {{$order->id}}
+                            {{$arts->id}}
                           </td>
                           <td>
-                            {{$order->name}}
+                            {{$arts->name}}
                           </td>
                           <td>
-                            {{$order->phone}}
+                            {{$arts->phone}}
                           </td>
                           <td>
-                            {{$order->email}}
+                            {{$arts->email}}
                           </td>
                           <td>
-                            {{$order->created_at}}
+                            {{$arts->category}}
                           </td>
                           <td>
-                            {{$order->selectedArtist}}
+                            {{$arts->city}}
                           </td>
                           <td>
-                            {{$order->description}}
+                            {{$arts->created_at}}
                           </td>
                           <td>
-                            {{$order->status}}
+                            {{$arts->name}}
                           </td>
                           <td>
                             
                             <div  data-aos="fade-up" data-aos-delay="100">
-                              <a href="ArtPieces/{{$order->image}}" class="d-block photo-item" data-fancybox="gallery">
-                                <img src="ArtPieces/{{$order->image}}" alt="Image" class="">
+                              <a href="ArtPieces/{{$arts->image}}" class="d-block photo-item" data-fancybox="gallery">
+                                <img src="ArtPieces/{{$arts->image}}" alt="Image" class="">
                                 
                               </a>
                             </div>
                     
-                            {{-- <img   src="ArtPieces/{{$order->image}}" alt="" width="100%" height="100p%"> --}}
+                            {{-- <img   src="ArtPieces/{{$order ?? ''->image}}" alt="" width="100%" height="100p%"> --}}
                                       </td>
-                                      <td><a class="btn btn-success" onclick="return confirm('Are you sure you want to approve this')" href="{{url('approve_order',$order->id)}}">Approve</a></td>
-                                      <td><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this')" href="{{url('canceled',$order->id)}}">Cancel</a></td>
-                                      <td><a class="btn btn-primary"  href="{{url('send_Mail',$order->id)}}">Send Mail</a></td>
+                                      <td><a class="btn btn-success" onclick="return confirm('Are you sure you want to approve this')" href="{{url('approve_order',$arts->id)}}">Approve</a></td>
+                                      <td><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this')" href="{{url('canceled',$arts->id)}}">Cancel</a></td>
+                                      <td><a class="btn btn-primary"  href="{{url('send_Mail',$arts->id)}}">Send Mail</a></td>
                         </tr>
                         @endforeach
                       </tbody>
