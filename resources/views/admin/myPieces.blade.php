@@ -472,7 +472,7 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Orders from the Clients</h4>
+                  <h4 class="card-title">My Posted Art Pieces</h4>
                
                   <div class="table-responsive pt-5">
                     <table class="table table-bordered">
@@ -500,57 +500,57 @@
                             Date Posted
                           </th>
                           <th>
-                            Artist Name
+                            Status
                           </th>
                           <th>
                             Picture
                           </th>
-                          <th> Approved</th>
-                          <th> Canceled</th>
+                          {{-- <th> Approved</th> --}}
+                          <th> Delete</th>
                            <th> Send Mail</th>
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach ($art as$arts )
+                        @foreach ($pieces as$piece )
                         <tr>
                           <td>
-                            {{$arts->id}}
+                            {{$piece->id}}
                           </td>
                           <td>
-                            {{$arts->name}}
+                            {{$piece->name}}
                           </td>
                           <td>
-                            {{$arts->phone}}
+                            {{$piece->phone}}
                           </td>
                           <td>
-                            {{$arts->email}}
+                            {{$piece->email}}
                           </td>
                           <td>
-                            {{$arts->category}}
+                            {{$piece->category}}
                           </td>
                           <td>
-                            {{$arts->city}}
+                            {{$piece->city}}
                           </td>
                           <td>
-                            {{$arts->created_at}}
+                            {{$piece->created_at}}
                           </td>
                           <td>
-                            {{$arts->name}}
+                            {{$piece->status}}
                           </td>
                           <td>
                             
                             <div  data-aos="fade-up" data-aos-delay="100">
-                              <a href="ArtPieces/{{$arts->image}}" class="d-block photo-item" data-fancybox="gallery">
-                                <img src="ArtPieces/{{$arts->image}}" alt="Image" class="">
+                              <a href="ArtPieces/{{$piece->image}}" class="d-block photo-item" data-fancybox="gallery">
+                                <img src="ArtPieces/{{$piece->image}}" alt="Image" class="">
                                 
                               </a>
                             </div>
                     
                             {{-- <img   src="ArtPieces/{{$order ?? ''->image}}" alt="" width="100%" height="100p%"> --}}
                                       </td>
-                                      <td><a class="btn btn-success" onclick="return confirm('Are you sure you want to approve this')" href="{{url('approve_art',$arts->id)}}">Approve</a></td>
-                                      <td><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this')" href="{{url('canceled',$arts->id)}}">Cancel</a></td>
-                                      <td><a class="btn btn-primary"  href="{{url('send_Mail',$arts->id)}}">Send Mail</a></td>
+                                      {{-- <td><a class="btn btn-success" onclick="return confirm('Are you sure you want to approve this')" href="{{url('approve_art',$arts->id)}}">Approve</a></td> --}}
+                                      <td><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this')" href="{{url('deleted',$piece->id)}}">Delete</a></td>
+                                      <td><a class="btn btn-primary"  href="{{url('send_Mail',$piece->id)}}">Send Mail</a></td>
                         </tr>
                         @endforeach
                       </tbody>

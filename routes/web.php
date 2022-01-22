@@ -14,10 +14,12 @@ use App\Http\Controllers\AdminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/posted',[HomeController::class,'posted']);
 Route::get('/approve_order/{id}',[HomeController::class,'approve']);
 Route::get('/canceled/{id}',[HomeController::class,'cancel_order']);
-
-
+Route::get('/deleted/{id}',[HomeController::class,'deleted']);
+Route::get('/approve_art/{id}',[AdminController::class,'approved']);
+Route::get('/canceled/{id}',[AdminController::class,'canceled']);
 Route::get('/artists',[UserController::class,'artist']);
 Route::get('/Cancel/{id}',[UserController::class,'cancel']);
 Route::get('/MyOrders',[UserController::class,'myOrder']);

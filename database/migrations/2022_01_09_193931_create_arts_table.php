@@ -16,6 +16,7 @@ class CreateArtsTable extends Migration
         Schema::create('arts', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
+            $table->string('status')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('category')->nullable();

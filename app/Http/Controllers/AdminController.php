@@ -32,4 +32,19 @@ class AdminController extends Controller
         $art = arts::all();
         return view("Super.approve",compact('art'));
     }
+
+    public function approved($id){
+        $data=arts::find($id);
+        $data->status="approved";
+        $data->save();
+        return redirect()->back();
+    }
+
+    public function canceled($id){
+        $data=arts::find($id);
+        $data->status="pending";
+        $data->save();
+        return redirect()->back();
+    }
+    
 }

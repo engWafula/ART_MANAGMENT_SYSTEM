@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function redirect(){
         if(Auth::id()){
          if(Auth::User()->usertype=="0"){
-            $art = arts::all();
+            $art = arts::all()->where("status","approved");;
 
             return view("user.home1",compact('art'));
          }
@@ -80,14 +80,39 @@ class HomeController extends Controller
         $art->city=$request->city;
         $art->description=$request->description;
         $art->category=$request->category;
+        $art->status="pending";
         
         if(Auth::id()){
             // $art->user_id=Auth::user()->id;
-             $art->user_name=Auth::user()->user_name;
+           
+             $art->user_name=Auth::user()->name;
+            
             
         }
         $art->save();
         
         return redirect()->back()->with("message","DOCTOR  ADDED  SUCCESSFULLY");
+    }
+
+    public function posted(){
+     
+     
+        if(Auth::id()){
+            //this code here will get  the specific appointments made by  a  user  who  is  logged in
+            if(Auth::user()->usertype==1){
+            $userId=Auth::user()->name;
+            $pieces =arts::where('user_name',$userId)->get();
+            return view("admin.myPieces",compact("pieces"));   
+            }
+        }
+       else{
+           return redirect()->back();
+       }
+    }
+
+    public function deleted($id){
+        $data=arts::find($id);
+        $data->delete();
+        return redirect()->back();
     }
 }

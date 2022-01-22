@@ -16,7 +16,7 @@ class UserController extends Controller
     }
 
     public  function  index(){
-        $art = arts::all();
+        $art = arts::all()->where("status","approved");
         return view("user.home1",compact('art'));
     }
     // public  function  artists(){
