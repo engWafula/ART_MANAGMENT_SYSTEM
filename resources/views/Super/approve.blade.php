@@ -496,6 +496,9 @@
                           <th>
                             City
                           </th>
+                               <th>
+                            Status
+                          </th>
                           <th>
                             Date Posted
                           </th>
@@ -530,6 +533,9 @@
                           </td>
                           <td>
                             {{$arts->city}}
+                          </td>
+                            <td>
+                            {{$arts->status}}
                           </td>
                           <td>
                             {{$arts->created_at}}
