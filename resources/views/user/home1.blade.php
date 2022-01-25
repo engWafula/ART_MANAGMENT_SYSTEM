@@ -32,7 +32,7 @@
  
     <div class="main-menu">
       <ul class="js-clone-nav">
-        <li class="active"><a href="index.html">Home</a></li>
+        <li class="active"><a href="/">Home</a></li>
         {{-- <li><a href="single.html">Exhibition</a></li> --}}
         <li><a href="bio.html">Bio</a></li>
         <!-- <li><a href="blog.html">Blog</a></li> -->

@@ -18,16 +18,25 @@
                 <x-jet-label for="email" value="{{ __('Email') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
-
+{{-- 
                <div class="mt-4 mb-10">
                 <x-jet-label for="email" value="{{ __('Category') }}" />
-                <select id="email" class="block mt-1 w-full" type="number" name="usertype"  required />
+                <select id="email" class="block mt-30 w-full" type="number" name="usertype"  required />
                   <option>---Select Your Category---</option>
                <option value="1">Artist</option>
                    <option value="0">Not Artist</option>
+            </div> --}}
+            <div class="mt-4  ">
+                <x-jet-label for="AccountType" value="{{ __('Choose Your Account Type') }}" />
+                
+                <x-jet-input id="artist" class="" type="radio"  name="usertype" required value="1"/>
+                <x-jet-label for="Artist" value="{{ __('Artist') }}" />
+                
+                <x-jet-input id="email" class="" type="radio"  name="usertype"  required value="0"/>
+                <x-jet-label for="NotArtist" value="{{ __('Not an Artist') }}" />
             </div>
 
-            <div class="mt-10">
+            <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Password') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>

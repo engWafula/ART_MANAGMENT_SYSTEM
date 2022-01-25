@@ -16,9 +16,9 @@ class AdminController extends Controller
     public function super(){
         if(Auth::id()){
          if(Auth::User()->usertype=="2"){
-            $art = arts::all();
+            $user=user::all();
 
-            return view("Super.admin");
+            return view("Super.admin",compact('user'));
          }
      
         }
@@ -46,5 +46,36 @@ class AdminController extends Controller
         $data->save();
         return redirect()->back();
     }
+
+    public function postedPieces(){
+     
+     
+        if(Auth::id()){
+            
+            if(Auth::user()->usertype==2){
+            
+            $pieces =arts::all();
+            return view("Super.postedPieces",compact("pieces"));   
+            }
+        }
+       else{
+           return redirect()->back();
+       }
+    }
+
     
+    public  function send_mail($id){
+        if(Auth::id()){
+            if(Auth::user()->usertype==2){
+        $data=arts::find($id);
+        return view('Super.sendMail',compact('data'));
+    }
+    else{
+        return redirect()->back();
+    }
+   }
+   else{
+       return redirect("login");
+   }
+    }
 }

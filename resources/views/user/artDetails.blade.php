@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     @include('user.css')
+    <base href="/public">
   </head>
   <body data-spy="scroll" data-target=".fixed-top">
     <!-- <div class="spinner-wrapper">
@@ -24,7 +25,8 @@
 
   <header class="header-bar d-flex d-lg-block align-items-center" data-aos="fade-left">
     <div class="site-logo">
-      <a class="navbar-brand" href="index.html" >DENO ARTS <sup><i>UG</i></s></a>
+      <img  class="img-fluid navbar-brand" src="../assets/images/logo.png" id="deno" alt="" width='50%' height="50%"/>
+      {{-- <a class="navbar-brand" href="index.html" >DENO ARTS <sup><i>UG</i></s></a> --}}
     </div>
     
     <div class="d-inline-block d-xl-none ml-md-0 ml-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
@@ -32,7 +34,7 @@
     <div class="main-menu">
       <ul class="js-clone-nav">
         <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="single.html">Exhibition</a></li>
+        {{-- <li><a href="single.html">Exhibition</a></li> --}}
         <li><a href="bio.html">Bio</a></li>
         <!-- <li><a href="blog.html">Blog</a></li> -->
         <li><a  href="{{url("makeOrder")}}">Order Art Piece</a></li>
@@ -40,24 +42,21 @@
         @if(Route::has('login'))
         @auth
         <li>
-          <a  href="{{url("myappointment")}}" style='background-color:greenyellow; color:white;'>myAppointments</a>
+          <a  href="{{url("MyOrders")}}">My Orders</a>
           
         </li>
-        <li >
-    
-       </li>
-
+      
        <x-app-layout>
       </x-app-layout> 
           @else
         <li >
-          {{-- <a class="btn btn-primary ml-lg-2" href="{{route('login')}}">Login</a> --}}
-          <a type="button" class="btn btn-primary" href="{{route('login')}}">Login</a>
+          
+          <a  class="btn btn-primary" href="{{route('login')}}">Login</a>
         </li>
      
         <li>
-            {{-- <a class="btn btn-success ml-lg-2 mt-2"  href="{{route('register')}}">Register</a> --}}
-            <a type="button" class="btn btn-success mt-2"  href="{{route('register')}}">Register</a>
+         
+            <a  class="btn btn-success mt-2"  href="{{route('register')}}">Register</a>
           </li>
           @endauth
           @endif

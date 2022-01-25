@@ -14,6 +14,8 @@ use App\Http\Controllers\AdminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/send_mail/{id}',[AdminController::class,'send_email']);
+Route::get('/posts',[AdminController::class,'postedPieces']);
 Route::get('/posted',[HomeController::class,'posted']);
 Route::get('/approve_order/{id}',[HomeController::class,'approve']);
 Route::get('/canceled/{id}',[HomeController::class,'cancel_order']);

@@ -17,12 +17,13 @@ class HomeController extends Controller
          }
          else if(Auth::User()->usertype=="1"){
             $userId=Auth::user()->id;
-            $names =arts::where('name',$userId)->get();
+            $names =user::where('name',$userId)->get();
             // $username=Auth::user()->id;
             // $name=user::where('name',$username)->get();
              return view('admin.home',compact('names'));
          }
          else{
+             
              return view('Super.admin');
          }
         }
@@ -91,7 +92,7 @@ class HomeController extends Controller
         }
         $art->save();
         
-        return redirect()->back()->with("message","DOCTOR  ADDED  SUCCESSFULLY");
+        return redirect()->back()->with("message","Art Piece Posted Sucessfully");
     }
 
     public function posted(){
