@@ -80,4 +80,10 @@ class UserController extends Controller
        return redirect()->back();
    }
 }
+
+public  function  more($user_name){
+     
+    $data=arts::where("user_name",$user_name)->get();
+   return view("user.more",compact('data'));
+}
  }

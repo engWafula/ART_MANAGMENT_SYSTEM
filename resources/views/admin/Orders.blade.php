@@ -33,22 +33,55 @@
           </button>
         </div>
         <div>
-          <a class="navbar-brand brand-logo" href="index.html">
-            <img src="admin/assets/images/logo.svg" alt="logo" />
+          <a class="navbar-brand brand-logo" href="../../index.html">
+            <img src="../../images/logo.svg" alt="logo" />
           </a>
-          <a class="navbar-brand brand-logo-mini" href="index.html">
-            <img src="admin/assets/images/logo-mini.svg" alt="logo" />
+          <a class="navbar-brand brand-logo-mini" href="../../index.html">
+            <img src="../../images/logo-mini.svg" alt="logo" />
           </a>
         </div>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-top"> 
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">Wafula Allan Isaac </span></h1>
+            <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">John Doe</span></h1>
             <h3 class="welcome-sub-text">Your performance summary this week </h3>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown d-none d-lg-block">
+            <a class="nav-link dropdown-bordered dropdown-toggle dropdown-toggle-split" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false"> Select Category </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
+              <a class="dropdown-item py-3" >
+                <p class="mb-0 font-weight-medium float-left">Select category</p>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Bootstrap Bundle </p>
+                  <p class="fw-light small-text mb-0">This is a Bundle featuring 16 unique dashboards</p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Angular Bundle</p>
+                  <p class="fw-light small-text mb-0">Everything you’ll ever need for your Angular projects</p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">VUE Bundle</p>
+                  <p class="fw-light small-text mb-0">Bundle of 6 Premium Vue Admin Dashboard</p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">React Bundle</p>
+                  <p class="fw-light small-text mb-0">Bundle of 8 Premium React Admin Dashboard</p>
+                </div>
+              </a>
+            </div>
+          </li>
           <li class="nav-item d-none d-lg-block">
             <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
               <span class="input-group-addon input-group-prepend border-right">
@@ -114,7 +147,7 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                  <img src="../../images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
@@ -123,7 +156,7 @@
               </a>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                  <img src="../../images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
@@ -132,7 +165,7 @@
               </a>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                  <img src="../../images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
@@ -143,15 +176,21 @@
           </li>
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="img-xs rounded-circle" src="admin/assets/images/faces/face8.jpg" alt="Profile image"> </a>
-     
+              <img class="img-xs rounded-circle" src="../../images/faces/face8.jpg" alt="Profile image"> </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+              <div class="dropdown-header text-center">
+                <img class="img-md rounded-circle" src="../../images/faces/face8.jpg" alt="Profile image">
+                <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
+                <p class="fw-light text-muted mb-0">allenmoreno@gmail.com</p>
+              </div>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i> Messages</a>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i> Activity</a>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i> FAQ</a>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+            </div>
           </li>
-       
         </ul>
-
-        <x-app-layout>
-        </x-app-layout>
-
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
           <span class="mdi mdi-menu"></span>
         </button>
@@ -339,11 +378,11 @@
             </a>
           </li>
              <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('ApproveArt')}}">
+            <a class="nav-link" href="{{url('AddArt')}}">
               <span class="menu-icon">
                 <i class="menu-icon mdi mdi-layers-outline"></i>
               </span>
-              <span class="menu-title">Approve ArtPieces</span>
+              <span class="menu-title">  Add Art</span>
             </a>
           </li>
           {{-- <li class="nav-item nav-category">Add Art</li> --}}
@@ -353,14 +392,11 @@
               <span class="menu-title">Orders </span>
               <i class="menu-arrow"></i>
             </a>
-            {{-- <div class="collapse" id="form-elements">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Adding  Art</a></li>
-              </ul>
-            </div> --}}
+          
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="{{url('posts')}}" aria-expanded="false" aria-controls="tables">
+            <a class="nav-link" data-bs-toggle="collapse" href="{{url('posted')}}" aria-expanded="false" aria-controls="tables">
               <i class="menu-icon mdi mdi-table"></i>
               <span class="menu-title">Posted ArtPieces</span>
               <i class="menu-arrow"></i>
@@ -371,30 +407,6 @@
               </ul>
             </div>
           </li>
-          {{-- <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-              <i class="menu-icon mdi mdi-chart-line"></i>
-              <span class="menu-title">Charts</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="charts">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
-              </ul>
-            </div>
-          </li> --}}
-          {{-- <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-              <i class="menu-icon mdi mdi-table"></i>
-              <span class="menu-title">Tables</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="tables">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
-              </ul>
-            </div>
-          </li> --}}
           {{-- <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
               <i class="menu-icon mdi mdi-layers-outline"></i>
@@ -408,18 +420,18 @@
             </div>
           </li> --}}
           {{-- <li class="nav-item nav-category">pages</li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+          <li class="nav-item"> --}}
+            {{-- <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="menu-icon mdi mdi-account-circle-outline"></i>
               <span class="menu-title">User Pages</span>
               <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
+            </a> --}}
+            {{-- <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
               </ul>
-            </div>
-          </li> --}}
+            </div> --}}
+          {{-- </li> --}}
           {{-- <li class="nav-item nav-category">help</li>
           <li class="nav-item">
             <a class="nav-link" href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
@@ -448,7 +460,7 @@
                             #
                           </th>
                           <th>
-                            Art name
+                            Client name
                           </th>
                           <th>
                             Phone
@@ -457,19 +469,16 @@
                             email
                           </th>
                           <th>
-                            Category
+                            Date
                           </th>
                           <th>
-                            City
+                            Selected Artist
                           </th>
-                               <th>
+                          <th>
+                            Message
+                          </th>
+                          <th>
                             Status
-                          </th>
-                          <th>
-                            Date Posted
-                          </th>
-                          <th>
-                            Artist Name
                           </th>
                           <th>
                             Picture
@@ -480,49 +489,46 @@
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach ($art as$arts )
+                        @foreach ($order as$orders )
                         <tr>
                           <td>
-                            {{$arts->id}}
+                            {{$orders->id}}
                           </td>
                           <td>
-                            {{$arts->name}}
+                            {{$orders->name}}
                           </td>
                           <td>
-                            {{$arts->phone}}
+                            {{$orders->phone}}
                           </td>
                           <td>
-                            {{$arts->email}}
+                            {{$orders->email}}
                           </td>
                           <td>
-                            {{$arts->category}}
+                            {{$orders->created_at}}
                           </td>
                           <td>
-                            {{$arts->city}}
-                          </td>
-                            <td>
-                            {{$arts->status}}
+                            {{$orders->selectedArtist}}
                           </td>
                           <td>
-                            {{$arts->created_at}}
+                            {{$orders->description}}
                           </td>
                           <td>
-                            {{$arts->name}}
+                            {{$orders->status}}
                           </td>
                           <td>
                             
                             <div  data-aos="fade-up" data-aos-delay="100">
-                              <a href="ArtPieces/{{$arts->image}}" class="d-block photo-item" data-fancybox="gallery">
-                                <img src="ArtPieces/{{$arts->image}}" alt="Image" class="">
+                              <a href="ArtPieces/{{$orders->image}}" class="d-block photo-item" data-fancybox="gallery">
+                                <img src="ArtPieces/{{$orders->image}}" alt="Image" class="">
                                 
                               </a>
                             </div>
                     
-                            {{-- <img   src="ArtPieces/{{$order ?? ''->image}}" alt="" width="100%" height="100p%"> --}}
+                            {{-- <img   src="ArtPieces/{{$order->image}}" alt="" width="100%" height="100p%"> --}}
                                       </td>
-                                      <td><a class="btn btn-success" onclick="return confirm('Are you sure you want to approve this')" href="{{url('approve_art',$arts->id)}}">Approve</a></td>
-                                      <td><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this')" href="{{url('canceled',$arts->id)}}">Cancel</a></td>
-                                      <td><a class="btn btn-primary"  href="{{url('send_Mail',$arts->id)}}">Send Mail</a></td>
+                                      <td><a class="btn btn-success" onclick="return confirm('Are you sure you want to approve this')" href="{{url('approve_order',$orders->id)}}">Approve</a></td>
+                                      <td><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this')" href="{{url('canceled',$orders->id)}}">Cancel</a></td>
+                                      <td><a class="btn btn-primary"  href="{{url('send_Mail',$orders->id)}}">Send Mail</a></td>
                         </tr>
                         @endforeach
                       </tbody>

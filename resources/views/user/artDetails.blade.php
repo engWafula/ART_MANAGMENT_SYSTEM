@@ -33,7 +33,7 @@
  
     <div class="main-menu">
       <ul class="js-clone-nav">
-        <li class="active"><a href="index.html">Home</a></li>
+        <li class="active"><a href="/">Home</a></li>
         {{-- <li><a href="single.html">Exhibition</a></li> --}}
         <li><a href="bio.html">Bio</a></li>
         <!-- <li><a href="blog.html">Blog</a></li> -->
@@ -82,11 +82,17 @@
           <h2 class="text-white mb-4" data-aos="fade-up">ABOUT THE ART PIECE </h2>
           
           </figure>
-          <img src="ArtPieces/{{$art->image}}" alt="Image" class="img-fluid">
-          <h4 class="text-white mb-4" data-aos="fade-up">Artist Name: {{$art->name}} </h4>
-
+          {{-- <img src="ArtPieces/{{$art->image}}" alt="Image" class="img-fluid">
+          <h4 class="text-white mb-4" data-aos="fade-up">Artist Name: {{$art->name}} </h4> --}}
+          <div>
+            <a href="ArtPieces/{{$art->image}}"class="" data-fancybox="gallery">
+              <img src="ArtPieces/{{$art->image}}" alt="Image" class="img-fluid">
+            
+            </a>
+          </div>
           <div class="row" data-aos="">
             <class class="col-md-12">
+              <p class="text-white mb-4">Description</p>
               <p class="text-white mb-4">{{$art->description}}</p>
           <p class="text-white mb-4" data-aos="fade-up">Category: {{$art->category}} </p>
               <p class="text-white mb-4" data-aos="fade-up">My email address: {{$art->email}} </p>
@@ -97,7 +103,9 @@
             <p  class="text-white mb-4">Posted on: {{$art->updated_at}}<br></p>
               
                 
-                <li>  <button type="submit" class="form-control-submit-button"><a href="tel:{{$art->phone}}">CALL ME</a></button></li>
+                  <button type="submit" class="form-control-submit-button"><a href="tel:{{$art->phone}}">CALL ME</a></button>
+                      <button type="submit" class="form-control-submit-button"><a href="{{url("moreDetails",$art->user_name)}}">View More</a></button>
+            
                  </class>
            
                           
@@ -106,9 +114,11 @@
               
             </div>
           </div>
+          @endforeach
+          {{-- @include('user.more')  --}}
         </div>
-        @endforeach
-
+        
+       
       </div>
 
       <div class="row justify-content-center">

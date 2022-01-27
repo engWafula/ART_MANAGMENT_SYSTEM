@@ -14,7 +14,7 @@ use App\Http\Controllers\AdminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/send_mail/{id}',[AdminController::class,'send_email']);
+Route::get('/send_Mail/{id}',[AdminController::class,'send_email']);
 Route::get('/posts',[AdminController::class,'postedPieces']);
 Route::get('/posted',[HomeController::class,'posted']);
 Route::get('/approve_order/{id}',[HomeController::class,'approve']);
@@ -27,9 +27,11 @@ Route::get('/Cancel/{id}',[UserController::class,'cancel']);
 Route::get('/MyOrders',[UserController::class,'myOrder']);
 Route::get('/makeOrder',[UserController::class,'makeOrder']);
 Route::get('/details/{id}',[UserController::class,'details']);
+Route::get('/moreDetails/{user_name}',[UserController::class,'more']);
 Route::post('/Order',[UserController::class,'order']);
 Route::post('/upload_art',[HomeController::class,'upload']);
-Route::get('/orders',[HomeController::class,'orders']);
+Route::get('/orders',[AdminController::class,'orders']);
+Route::get('/Orders',[HomeController::class,'Order']);
 Route::get('/',[UserController::class,'index']);
 Route::get('/AddArt',[HomeController::class,'addArt']);
 Route::get('/home',[HomeController::class,'redirect']);

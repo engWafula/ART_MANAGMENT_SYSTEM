@@ -64,7 +64,7 @@ class AdminController extends Controller
     }
 
     
-    public  function send_mail($id){
+    public  function send_email($id){
         if(Auth::id()){
             if(Auth::user()->usertype==2){
         $data=arts::find($id);
@@ -77,5 +77,12 @@ class AdminController extends Controller
    else{
        return redirect("login");
    }
+    }
+
+
+    public  function  orders(){
+        // $artist = user::all()->where("usertype","1");
+        $orders = orders::all();
+         return view("Super.orders",compact('orders'));
     }
 }

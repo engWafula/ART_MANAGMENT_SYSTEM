@@ -16,11 +16,12 @@ class HomeController extends Controller
             return view("user.home1",compact('art'));
          }
          else if(Auth::User()->usertype=="1"){
-            $userId=Auth::user()->id;
-            $names =user::where('name',$userId)->get();
-            // $username=Auth::user()->id;
-            // $name=user::where('name',$username)->get();
-             return view('admin.home',compact('names'));
+            // $userId=Auth::user()->id;
+            // $names =user::where('name',$userId)->get();
+            // // $username=Auth::user()->id;
+            // // $name=user::where('name',$username)->get();
+             $orders=orders::all();
+             return view('admin.home',compact('orders'));
          }
          else{
              
@@ -33,11 +34,7 @@ class HomeController extends Controller
         }
     }
 
-    public  function  orders(){
-        // $artist = user::all()->where("usertype","1");
-        $orders = orders::all();
-         return view("admin.orders",compact('orders'));
-    }
+
 
     public function approve($id){
         $data=orders::find($id);
@@ -115,5 +112,20 @@ class HomeController extends Controller
         $data=arts::find($id);
         $data->delete();
         return redirect()->back();
+    }
+
+    public  function  Order(){
+              
+    if(Auth::id()){
+        //this code here will get  the specific appointments made by  a  user  who  is  logged in
+        if(Auth::user()->usertype==1){
+        $artist_name=Auth::user()->name;
+        $order =orders::where('selectedArtist',$artist_name)->get();
+        return view("admin.Orders",compact("order"));   
+        }
+    }
+   else{
+       return redirect()->back();
+   }
     }
 }
