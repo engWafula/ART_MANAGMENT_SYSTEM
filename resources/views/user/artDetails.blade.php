@@ -37,10 +37,11 @@
         {{-- <li><a href="single.html">Exhibition</a></li> --}}
         <li><a href="bio.html">Bio</a></li>
         <!-- <li><a href="blog.html">Blog</a></li> -->
-        <li><a  href="{{url("makeOrder")}}">Order Art Piece</a></li>
+       
      
         @if(Route::has('login'))
         @auth
+        <li><a  href="{{url("makeOrder")}}">Order Art Piece</a></li>
         <li>
           <a  href="{{url("MyOrders")}}">My Orders</a>
           
@@ -91,7 +92,7 @@
             </a>
           </div>
           <div class="row" data-aos="">
-            <class class="col-md-12">
+            <div class="col-md-12">
               <p class="text-white mb-4">Description</p>
               <p class="text-white mb-4">{{$art->description}}</p>
           <p class="text-white mb-4" data-aos="fade-up">Category: {{$art->category}} </p>
@@ -103,10 +104,10 @@
             <p  class="text-white mb-4">Posted on: {{$art->updated_at}}<br></p>
               
                 
-                  <button type="submit" class="form-control-submit-button"><a href="tel:{{$art->phone}}">CALL ME</a></button>
-                      <button type="submit" class="form-control-submit-button"><a href="{{url("moreDetails",$art->user_name)}}">View More</a></button>
+                  <a class="btn btn-danger" href="tel:{{$art->phone}}">Call Me</a>
+                  <a class="btn btn-success" href="{{url('moreDetails',$art->user_name)}}">View More</a>
             
-                 </class>
+                 </div>
            
                           
 

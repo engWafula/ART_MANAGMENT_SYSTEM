@@ -128,4 +128,21 @@ class HomeController extends Controller
        return redirect()->back();
    }
     }
+
+
+       
+    public  function sendemail($id){
+        if(Auth::id()){
+            if(Auth::user()->usertype==1){
+        $data=orders::find($id);
+        return view('admin.sendEmail',compact('data'));
+    }
+    else{
+        return redirect()->back();
+    }
+   }
+   else{
+       return redirect("login");
+   }
+    }
 }

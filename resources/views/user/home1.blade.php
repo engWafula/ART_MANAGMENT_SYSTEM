@@ -24,8 +24,8 @@
 
   <header class="header-bar d-flex d-lg-block align-items-center" data-aos="fade-left">
     <div class="site-logo">
-      <img  class="img-fluid navbar-brand" src="../assets/images/logo.png" id="deno" alt="" width='50%' height="50%"/>
-      {{-- <a class="navbar-brand" href="index.html" >DENO ARTS <sup><i>UG</i></s></a> --}}
+      {{-- <img  class="img-fluid navbar-brand" src="../assets/images/logo.png" id="deno" alt="" width={50px} height={50px}/> --}}
+      <a class="navbar-brand" href="/" >UG ARTS</a>
     </div>
     
     <div class="d-inline-block d-xl-none ml-md-0 ml-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
@@ -36,10 +36,11 @@
         {{-- <li><a href="single.html">Exhibition</a></li> --}}
         <li><a href="bio.html">Bio</a></li>
         <!-- <li><a href="blog.html">Blog</a></li> -->
-        <li><a  href="{{url("makeOrder")}}">Order Art Piece</a></li>
+       
      
         @if(Route::has('login'))
         @auth
+        <li><a  href="{{url("makeOrder")}}">Order Art Piece</a></li>
         <li>
           <a  href="{{url("MyOrders")}}">My Orders</a>
           
@@ -71,12 +72,12 @@
       </ul>
     </div>
   </header> 
-  <div class><h2 class="text-white mb-4">WELCOME TO UG ARTS ONLINE ART EXHIBITION </h2>
+  <div class="items-center"><h2 class="text-white mb-4 text-center"> EXHIBITION PLATFORM</h2>
   <p class="mb-5"> This an online art piece <a href="single.html">exhibition platform <a> that focuses on drawings for all colors
     that can also be sold to you in  <a href="">a frame</a> or only the piece of paper<br> that can be sent to you through our social media pages  so take your time and view the beauty of ART and also order for yours <a href="contact.html">NOW<a>
   </a></p>
   
-  </div>
+
   @include('user.art')
 
 </div> <!-- .site-wrap -->

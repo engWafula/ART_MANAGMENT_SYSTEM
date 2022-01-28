@@ -528,7 +528,7 @@
                                       </td>
                                       <td><a class="btn btn-success" onclick="return confirm('Are you sure you want to approve this')" href="{{url('approve_order',$orders->id)}}">Approve</a></td>
                                       <td><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this')" href="{{url('canceled',$orders->id)}}">Cancel</a></td>
-                                      <td><a class="btn btn-primary"  href="{{url('send_Mail',$orders->id)}}">Send Mail</a></td>
+                                      <td><a class="btn btn-primary"  href="{{url('sendMail',$orders->id)}}">Send Mail</a></td>
                         </tr>
                         @endforeach
                       </tbody>
