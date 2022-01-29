@@ -10,18 +10,18 @@ class HomeController extends Controller
 {
     public function redirect(){
         if(Auth::id()){
-         if(Auth::User()->usertype=="0"){
+         if(Auth::user()->usertype==0){
             $art = arts::all()->where("status","approved");;
 
             return view("user.home1",compact('art'));
          }
-         else if(Auth::User()->usertype=="1"){
-            // $userId=Auth::user()->id;
+         else if(Auth::user()->usertype==1){
+             $username=Auth::user()->name;
             // $names =user::where('name',$userId)->get();
             // // $username=Auth::user()->id;
             // // $name=user::where('name',$username)->get();
-             $orders=orders::all();
-             return view('admin.home',compact('orders'));
+              //$orders=orders::all();
+             return view('admin.home',compact('username'));
          }
          else{
              
@@ -102,9 +102,12 @@ class HomeController extends Controller
             $pieces =arts::where('user_name',$userId)->get();
             return view("admin.myPieces",compact("pieces"));   
             }
+            else{
+                return redirect()->back();
+            }
         }
        else{
-           return redirect()->back();
+           return redirect('login');
        }
     }
 

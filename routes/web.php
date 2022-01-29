@@ -38,7 +38,7 @@ Route::get('/AddArt',[HomeController::class,'addArt']);
 Route::get('/home',[HomeController::class,'redirect']);
 Route::get('/ApproveArt',[AdminController::class,'approve']);
 
-Route::get('/super',[AdminController::class,'super']);
+
 // ->middleware('auth',"verified");
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // return view('dashboard');

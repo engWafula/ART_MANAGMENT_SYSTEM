@@ -13,25 +13,22 @@ use App\Models\Orders;
 
 class AdminController extends Controller
 {
-    public function super(){
-        if(Auth::id()){
-         if(Auth::User()->usertype=="2"){
-            $user=user::all();
-
-            return view("Super.admin",compact('user'));
-         }
-     
-        }
-        else{
-         
-            return redirect()->back();
-        }
-    }
 
     public function approve(){
+        if(Auth::id()){
+            
+            if(Auth::user()->usertype=='2'){
         $art = arts::all();
         return view("Super.approve",compact('art'));
     }
+    else {
+        return redirect()->back();
+    }
+}
+else{
+   return redirect()->back();
+}
+}
 
     public function approved($id){
         $data=arts::find($id);
@@ -52,15 +49,19 @@ class AdminController extends Controller
      
         if(Auth::id()){
             
-            if(Auth::user()->usertype==2){
+            if(Auth::user()->usertype=='2'){
             
             $pieces =arts::all();
             return view("Super.postedPieces",compact("pieces"));   
             }
+            else{
+                return redirect()->back();
+            }
         }
        else{
-           return redirect()->back();
+           return redirect("login");
        }
+   
     }
 
     
@@ -82,7 +83,18 @@ class AdminController extends Controller
 
     public  function  orders(){
         // $artist = user::all()->where("usertype","1");
+
+        if(Auth::id()){
+            if(Auth::user()->usertype==2){
         $orders = orders::all();
          return view("Super.orders",compact('orders'));
+        }
+        else{
+            return redirect()->back();
+        }
+       }
+       else{
+           return redirect("login");
+       }
+        }
     }
-}

@@ -26,8 +26,18 @@ class UserController extends Controller
     // }
 
     public  function  makeOrder(){
+        if(Auth::id()){
+            if(Auth::user()->usertype==0){
         $artist = user::all()->where("usertype","1");
          return view("user.Order",compact('artist'));
+        }
+        else{
+            return redirect()->back();
+        }
+    }
+    else{
+       return redirect('login');
+    }
     }
     
   
@@ -60,10 +70,19 @@ class UserController extends Controller
     }
 
     public  function  details($id){
-     
+        if(Auth::id()){
+            if(Auth::user()->usertype==0){
          $data=arts::all()->where("id",$id);
         return view("user.artDetails",compact('data'));
-   }
+    }
+    else{
+        return redirect()->back();
+    }
+}
+else{
+   return redirect('login');
+}
+}
 
    public function myOrder(){
      
@@ -75,9 +94,13 @@ class UserController extends Controller
         $orders =orders::where('user_id',$userId)->get();
         return view("user.myOrders",compact("orders"));   
         }
+        else{
+            return redirect()->back();
+        }
+     
     }
    else{
-       return redirect()->back();
+       return redirect("login");
    }
 }
 
