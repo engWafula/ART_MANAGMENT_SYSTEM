@@ -97,4 +97,45 @@ else{
            return redirect("login");
        }
         }
+
+
+        public function deleteuser($id){
+            $User=user::find($id);
+            $User->delete();
+            return redirect()->back();
+        }
+    
+
+        public  function emailuser($id){
+            if(Auth::id()){
+                if(Auth::user()->usertype==2){
+            $data=user::find($id);
+            return view('Super.EmailUser',compact('data'));
+        }
+        else{
+            return redirect()->back();
+        }
+       }
+       else{
+           return redirect("login");
+       }
+        }
+
+    public function me(){
+        
+    
+        if(Auth::id()){
+            if(Auth::user()->usertype==2){
+        $username=Auth::user()->name;
+         return view("Super.Navbar",compact('username'));
+        }
+        else{
+            return redirect()->back();
+        }
+       }
+       else{
+           return redirect("login");
+       }
+        }
+
     }

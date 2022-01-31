@@ -13,17 +13,60 @@ class UserController extends Controller
         $data=orders::find($id);
         $data->delete();
         return redirect()->back();
+
+        
     }
 
-    public  function  index(){
-        $art = arts::all()->where("status","approved");
-        return view("user.home1",compact('art'));
+    public function redirect(){
+        if(Auth::id()){
+         if(Auth::user()->usertype==0){
+            $art = arts::all()->where("status","approved");;
+
+            return view("user.home1",compact('art'));
+         }
+         else if(Auth::user()->usertype==1){
+             $username=Auth::user()->name;
+            // $names =user::where('name',$userId)->get();
+            // // $username=Auth::user()->id;
+            // // $name=user::where('name',$username)->get();
+              //$orders=orders::all();
+             return view('admin.home',compact('username'));
+         }
+         else{
+            $user=user::all();
+             return view('Super.admin',compact("user"));
+         }
+        }
+        else{
+         
+            return redirect()->back();
+        }
     }
-    // public  function  artists(){
+
+
+
+    public  function  index(){
+        if(Auth::id()){
+            if(Auth::user()->usertype==1){
+                $username=Auth::user()->name;
+               // $names =user::where('name',$userId)->get();
+               // // $username=Auth::user()->id;
+               // // $name=user::where('name',$username)->get();
+                 //$orders=orders::all();
+                return view('admin.home',compact('username'));
+            }
+            else{
+                $user=user::all();
+                return view('Super.admin',compact("user"));
+            }
+           }
+           else{
        
-        
-    //     return view("user.Order",compact('artist'));
-    // }
+                $art = arts::all()->where("status","approved");
+                return view("user.home1",compact('art'));
+
+}
+    }
 
     public  function  makeOrder(){
         if(Auth::id()){

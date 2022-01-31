@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  <base href="/public">
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Star Admin2 </title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="admin/assets/vendors/feather/feather.css">
+    @include('admin.css')
+
+    <!-- plugins:css -->
+  {{-- <link rel="stylesheet" href="admin/assets/vendors/feather/feather.css">
   <link rel="stylesheet" href="admin/assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="admin/assets/vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="admin/assets/vendors/typicons/typicons.css">
@@ -15,11 +13,13 @@
   <link rel="stylesheet" href="admin/assets/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="admin/assets/vendors/select2/select2.min.css">
+  <link rel="stylesheet" href="admin/assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="admin/assets/css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="admin/assets/images/favicon.png" />
+  <link rel="shortcut icon" href="admin/assets/images/favicon.png" /> --}}
 </head>
 
 <body>
@@ -199,119 +199,72 @@
       </div>
       <!-- partial -->
       <!-- partial:../../partials/_sidebar.html -->
-      @include("Super.Sidebar")
+    @include("Super.Sidebar")
       <!-- partial -->
-      <div class="main-panel">
+
+     
+      <div class="main-panel">        
         <div class="content-wrapper">
           <div class="row">
-          
-       
-            <div class="col-lg-12 grid-margin stretch-card">
+            
+            @if (session()->has('message'))
+            <div class="alert  alert-success">
+              <h1 type="button" data-dismiss="alert" style="cursor:pointer;"></h1>
+         {{session()->get('message')}}
+            </div>
+    
+              @endif
+            
+            <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Orders from the Clients</h4>
-               
-                  <div class="table-responsive pt-5">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>
-                            #
-                          </th>
-                          <th>
-                            Client name
-                          </th>
-                          <th>
-                            Phone
-                          </th>
-                          <th>
-                            email
-                          </th>
-                          <th>
-                            Date
-                          </th>
-                          <th>
-                            Selected Artist
-                          </th>
-                          <th>
-                            Message
-                          </th>
-                          <th>
-                            Status
-                          </th>
-                          <th>
-                            Picture
-                          </th>
-                          <th> Approved</th>
-                          <th> Canceled</th>
-                           <th> Send Mail</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @foreach ($orders as$order )
-                        <tr>
-                          <td>
-                            {{$order->id}}
-                          </td>
-                          <td>
-                            {{$order->name}}
-                          </td>
-                          <td>
-                            {{$order->phone}}
-                          </td>
-                          <td>
-                            {{$order->email}}
-                          </td>
-                          <td>
-                            {{$order->created_at}}
-                          </td>
-                          <td>
-                            {{$order->selectedArtist}}
-                          </td>
-                          <td>
-                            {{$order->description}}
-                          </td>
-                          <td>
-                            {{$order->status}}
-                          </td>
-                          <td>
-                            
-                            <div  data-aos="fade-up" data-aos-delay="100">
-                              <a href="ArtPieces/{{$order->image}}" class="d-block photo-item" data-fancybox="gallery">
-                                <img src="ArtPieces/{{$order->image}}" alt="Image" class="">
-                                
-                              </a>
-                            </div>
+                  <h4 class="card-title">Send Email</h4>
+                  <p class="card-description">
                     
-                            {{-- <img   src="ArtPieces/{{$order->image}}" alt="" width="100%" height="100p%"> --}}
-                                      </td>
-                                      <td><a class="btn btn-success" onclick="return confirm('Are you sure you want to approve this')" href="{{url('approve_order',$order->id)}}">Approve</a></td>
-                                      <td><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this')" href="{{url('canceled',$order->id)}}">Cancel</a></td>
-                                      <td><a class="btn btn-primary"  href="{{url('send_Mail',$order->id)}}">Send Mail</a></td>
-                        </tr>
-                        @endforeach
-                      </tbody>
-                    </table>
-                  </div>
+                  </p>
+            
+                 <form action="{{url("upload_art")}}" method="POST" enctype="multipart/form-data">
+                 @csrf
+                    <div class="form-group">
+                      <label for="exampleInputName1">Greetings</label>
+                      <input type="text" class="form-control" name="name" id="exampleInputName1" placeholder="Greetings">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleTextarea1">Description</label>
+                      <textarea class="form-control" id="exampleTextarea1" name="description"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail3">End Part</label>
+                      <input type="email" class="form-control" name="email" id="exampleInputEmail3" placeholder="End Part">
+                    </div>
+                
+                    <button type="submit" class="btn btn-primary me-2 text-black">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                  </form>
                 </div>
               </div>
             </div>
- 
            
+       
+  
+       
+          
+          </div>
+        </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
-        @include("Super.Footer")
+       @include("Super.Footer")
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
-  <script src="admin/assets/vendors/js/vendor.bundle.base.js"></script>
+     <script src="admin/assets/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
+  <script src="admin/assets/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+  <script src="admin/assets/vendors/select2/select2.min.js"></script>
   <script src="admin/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
   <!-- End plugin js for this page -->
   <!-- inject:js -->
@@ -322,7 +275,9 @@
   <script src="admin/assets/js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
+  <script src="admin/assets/js/file-upload.js"></script>
+  <script src="admin/assets/js/typeahead.js"></script>
+  <script src="admin/assets/js/select2.js"></script>
   <!-- End custom js for this page-->
 </body>
-
 </html>

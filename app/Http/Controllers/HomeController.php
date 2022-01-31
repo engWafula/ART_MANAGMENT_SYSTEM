@@ -8,33 +8,7 @@ use App\Models\Arts;
 use App\Models\Orders;
 class HomeController extends Controller
 {
-    public function redirect(){
-        if(Auth::id()){
-         if(Auth::user()->usertype==0){
-            $art = arts::all()->where("status","approved");;
-
-            return view("user.home1",compact('art'));
-         }
-         else if(Auth::user()->usertype==1){
-             $username=Auth::user()->name;
-            // $names =user::where('name',$userId)->get();
-            // // $username=Auth::user()->id;
-            // // $name=user::where('name',$username)->get();
-              //$orders=orders::all();
-             return view('admin.home',compact('username'));
-         }
-         else{
-             
-             return view('Super.admin');
-         }
-        }
-        else{
-         
-            return redirect()->back();
-        }
-    }
-
-
+   
 
     public function approve($id){
         $data=orders::find($id);

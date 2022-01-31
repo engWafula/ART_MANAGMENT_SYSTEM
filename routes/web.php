@@ -35,10 +35,10 @@ Route::get('/orders',[AdminController::class,'orders']);
 Route::get('/Orders',[HomeController::class,'Order']);
 Route::get('/',[UserController::class,'index']);
 Route::get('/AddArt',[HomeController::class,'addArt']);
-Route::get('/home',[HomeController::class,'redirect']);
+Route::get('/home',[UserController::class,'redirect']);
 Route::get('/ApproveArt',[AdminController::class,'approve']);
-
-
+Route::get('/deleteUser/{id}',[AdminController::class,'deleteuser']);
+Route::get('/MessageUser/{id}',[AdminController::class,'emailuser']);
 // ->middleware('auth',"verified");
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // return view('dashboard');
